@@ -1,12 +1,66 @@
-# React + Vite
+# ToDo List - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Frontend of the **ToDo List** application built with **React + Vite**.  
+The app communicates with the backend API (Node.js + Express + Supabase) to manage tasks, add, edit, and delete them.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+- Built with **React (Vite)**
+- Component-based structure
+- Axios for API requests
+- Routing with React Router
+- Optimized build served by **Nginx**
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Project Structure
+frontend/
+│── public/ # Static assets
+│── src/
+│ ├── components/ # Reusable UI components
+│ ├── contexts/ # API service (axios) 
+│ ├── App.jsx # Root component
+│ ├── api.jsx/ # Authentication
+│ └── hooks/ # Custom hooks
+│ └── main.jsx # Entry point
+│ └── supabaseClient.jsx # Supabase client
+│── package.json
+│── tailwind.config.js
+│── README.md
+│── vite.config.js
+│── Dockerfile
+│── nginx.conf
+
+
+### Install dependencies
+npm install
+npm run dev
+The app will be available at:
+http://localhost:5173
+
+### Production Build
+npm run build
+Output will be inside the /dist folder.
+
+### Run with Docker
+1. Build the Docker image
+docker build -t todo-frontend .
+2. Run a container
+docker run -p 3000:80 todo-frontend
+Now visit => http://localhost:3000
+
+### Tech Stack
+React (Vite)
+React Router
+Axios
+Tailwind CSS (optional)
+Docker + Nginx
+
+
+
+
+
+
+
+
